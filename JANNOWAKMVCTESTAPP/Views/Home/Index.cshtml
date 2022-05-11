@@ -1,0 +1,37 @@
+﻿@model JANNOWAKMVCTESTAPP.Models.PersonViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    @using (Html.BeginForm("index", "home"))
+    {
+        <table class="table table-bordered" cellspacing="1">
+            <tr>
+                <td class="col-md-3">
+                    @Html.LabelFor(m => m.Name)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Name)
+                    @Html.ValidationMessageFor(m => m.Name, "*")
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-3">
+                    @Html.LabelFor(m => m.EmailAddress)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.EmailAddress)
+                    @Html.ValidationMessageFor(m => m.EmailAddress, "*")
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-3">
+                    <input type="submit" value="save" />
+                    @Html.ValidationSummary()
+                </td>
+            </tr>
+        </table>
+    }
+</div>
